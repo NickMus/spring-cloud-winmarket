@@ -1,17 +1,13 @@
 package com.flamexander.cloud.client;
 
-import com.flamexander.cloud.client.entites.Product;
-import com.flamexander.cloud.client.service.ProductService;
+//import com.flamexander.cloud.client.services.ProductService;
 import com.netflix.discovery.EurekaClient;
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.io.IOException;
+import com.flamexander.cloud.client.entites.Product;
 import java.util.List;
 
 @RestController
@@ -22,8 +18,8 @@ public class GreetingControllerImpl implements GreetingController {
 
     ExcelReader excelReader;
 
-    @Autowired
-    ProductService productService;
+//    @Autowired
+//    ProductService productService;
 
     @Autowired
     public void setGreetingClient(ExcelReader excelReader) {
@@ -74,8 +70,8 @@ public class GreetingControllerImpl implements GreetingController {
         return new Cat(1, "Zina");
     }
 
-    @Override
-    public List<Product> getProduct() {
-        return productService.getProducts();
-    }
+//    @Override
+//    public List<Product> getProduct() {
+//        return productService.getAllProducts();
+//    }
 }

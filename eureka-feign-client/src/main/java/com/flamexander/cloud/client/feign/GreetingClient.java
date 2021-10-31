@@ -1,7 +1,7 @@
 package com.flamexander.cloud.client.feign;
 
-import com.flamexander.cloud.client.Cat;
 import com.flamexander.cloud.client.entites.Product;
+import com.flamexander.cloud.client.Cat;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 

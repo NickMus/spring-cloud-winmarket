@@ -1,8 +1,8 @@
 package com.flamexander.cloud.client;
 
-import com.flamexander.cloud.client.entites.Product;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.flamexander.cloud.client.entites.Product;
 import java.util.List;
 
 public interface GreetingController {
@@ -17,7 +17,8 @@ public interface GreetingController {
 
     @RequestMapping("/get-obj")
     Cat getCat();
-
-    @RequestMapping("/get-products")
-    List<Product> getProduct();
 }
+
+//    @RequestMapping("/get-products")
+//    List<Product> getProduct();
+//}
