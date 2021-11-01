@@ -5,18 +5,18 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "products_images")
+@Table(name = "delivery_addresses")
 @Data
-public class ProductImage {
+public class DeliveryAddress {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "product_id")
-    private Product product;
+    @JoinColumn(name = "user_id")
+    private User user;
 
-    @Column(name = "path")
-    private String path;
+    @Column(name = "address")
+    private String address;
 }

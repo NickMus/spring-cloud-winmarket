@@ -1,25 +1,16 @@
 package com.flamexander.cloud.client.feign.controller;
 
-
-import com.flamexander.cloud.client.entites.Category;
 import com.flamexander.cloud.client.entites.Product;
-
 import com.flamexander.cloud.client.feign.GreetingClient;
+import com.flamexander.cloud.client.feign.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.data.domain.Page;
-//import org.springframework.data.jpa.domain.Specification;
-import org.springframework.cloud.context.named.NamedContextFactory;
 import org.springframework.data.domain.Page;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.data.jpa.domain.Specification;
-import javax.servlet.http.HttpServletRequest;
-import java.io.PrintWriter;
-import java.security.Principal;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -29,36 +20,36 @@ public class ShopController {
     private static final int INITIAL_PAGE = 0;
     private static final int PAGE_SIZE = 5;
 
-//    private UserService userService;
-//    private OrderService orderService;
-//    private ProductService productService;
-//    private ShoppingCartService shoppingCartService;
-//    private DeliveryAddressService deliverAddressService;
-//
-//    @Autowired
-//    public void setProductService(ProductService productService) {
-//        this.productService = productService;
-//    }
-//
-//    @Autowired
-//    public void setShoppingCartService(ShoppingCartService shoppingCartService) {
-//        this.shoppingCartService = shoppingCartService;
-//    }
-//
-//    @Autowired
-//    public void setUserService(UserService userService) {
-//        this.userService = userService;
-//    }
-//
-//    @Autowired
-//    public void setOrderService(OrderService orderService) {
-//        this.orderService = orderService;
-//    }
-//
-//    @Autowired
-//    public void setDeliverAddressService(DeliveryAddressService deliverAddressService) {
-//        this.deliverAddressService = deliverAddressService;
-//    }
+    public UserService userService;
+    public OrderService orderService;
+    public ProductService productService;
+    public ShoppingCartService shoppingCartService;
+    public DeliveryAddressService deliverAddressService;
+
+    @Autowired
+    public void setProductService(ProductService productService) {
+        this.productService = productService;
+    }
+
+    @Autowired
+    public void setShoppingCartService(ShoppingCartService shoppingCartService) {
+        this.shoppingCartService = shoppingCartService;
+    }
+
+    @Autowired
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
+
+    @Autowired
+    public void setOrderService(OrderService orderService) {
+        this.orderService = orderService;
+    }
+
+    @Autowired
+    public void setDeliverAddressService(DeliveryAddressService deliverAddressService) {
+        this.deliverAddressService = deliverAddressService;
+    }
 
     private GreetingClient greetingClient;
 
